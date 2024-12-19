@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
 import { GitItem } from "./GitItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { Loader } from "./loader/Loader";
 
 /**
  * la responsabilidad de este componente es
@@ -9,21 +9,19 @@ import { GitItem } from "./GitItem";
  */
 
 export const GifGrid = ({ category }) => {
-  // estado con arreglo para almacenar las imagenes
-  const [gifs, setGifs] = useState([]);
-
-  // efecto que se ejecuta solo al montar el componente
-  // hace un llamado a la funcion que
-  useEffect(() => {
-    getGifs(category).then(setGifs).catch(console.log);
-  }, []);
+  // us =o de custom hook
+  const { images: gifs, isLoading } = useFetchGifs(category);
 
   return (
-    <section className="category_section">
-      <h2 className="category__title">{category}</h2>
-      <ul className="category__list">
-        {gifs && gifs.map((gif) => <GitItem key={gif.id} {...gif} />)}
-      </ul>
-    </section>
+    <>
+      {(isLoading && <Loader />) || (
+        <section className="category_section">
+          <h2 className="category__title">{category}</h2>
+          <ul className="category__list">
+            {gifs && gifs.map((gif) => <GitItem key={gif.id} {...gif} />)}
+          </ul>
+        </section>
+      )}
+    </>
   );
 };

@@ -1,3 +1,7 @@
+/**
+ * la responsabilidad de esta funcion es hacer la peticion http al endpoint de imagenes
+ * y retornar un array de imagenes con su informacion más relevante
+ */
 export const getGifs = async (category) => {
   // constante donde se almacena la respuesta del fetch
   const response = await fetch(

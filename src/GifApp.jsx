@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
 import { GifGrid } from "./components/GifGrid";
+import giphy from "./images/PoweredBy_200px-Black_HorizLogo.png";
 
 export const GifApp = () => {
   // estado para mantener las categorias de las imagenes
@@ -20,7 +21,7 @@ export const GifApp = () => {
   return (
     <>
       <header>
-        <h1>Giphy: Gif App</h1>
+        <h1 className="app__title">Gif App</h1>
         <AddCategory handleAddCategory={handleAddCategory} />
       </header>
       <main>
@@ -30,6 +31,10 @@ export const GifApp = () => {
           ))
         }
       </main>
+      <div className="copyright">
+          <img src={giphy} alt="Logotipo de giphy" />
+          <span>and developed by <a href="https://www.linkedin.com/in/beto-dz" target="_blank">Beto</a></span>
+      </div>
     </>
   );
 };
