@@ -4,7 +4,7 @@ import { GifGrid } from "./components/GifGrid";
 
 export const GifApp = () => {
   // estado para mantener las categorias de las imagenes
-  const [categories, setCategories] = useState(["gears of war"]);
+  const [categories, setCategories] = useState(["rick and morty"]);
 
   // funcion para agregar una nueva categoria al estado
   const handleAddCategory = (category) => {
@@ -26,7 +26,7 @@ export const GifApp = () => {
       <main>
         {
           categories.map(category => (
-            <GifGrid category={category} />
+            <GifGrid key={category} category={category} />
           ))
         }
       </main>
