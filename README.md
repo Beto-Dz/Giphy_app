@@ -1,8 +1,5 @@
-# React + Vite
+# Giphy App
+Aplicación construida en React que consume el API de Giphy para obtener imagenes, las cuales son mostradas en la app.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ejemplo de vista
+![imagen](./src/images/image.png)
