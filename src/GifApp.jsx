@@ -20,6 +20,7 @@ export const GifApp = () => {
 
   return (
     <>
+      <div className="progress"></div>
       <header>
         <h1 className="app__title">Gif App</h1>
         <AddCategory handleAddCategory={handleAddCategory} />

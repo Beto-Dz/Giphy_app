@@ -26,6 +26,16 @@ body {
   gap: 1rem;
 }
 
+.progress {
+  height: 3px;
+  position: fixed;
+  top: 0;
+  z-index: 400;
+  background-color: #09f;
+  animation: progress auto linear;
+  animation-timeline: scroll(y root);
+}
+
 header {
   display: flex;
   flex-flow: column wrap;
@@ -33,7 +43,7 @@ header {
   gap: 12px;
 }
 
-.app__title{
+.app__title {
   padding: 1rem;
 }
 
@@ -188,6 +198,15 @@ main {
     rgb(67, 67, 67, 0.7) 0%,
     rgb(0, 0, 0, 0.7) 100%
   );
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes show {
