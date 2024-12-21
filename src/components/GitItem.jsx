@@ -1,7 +1,10 @@
+import React from "react";
+
 /**
- * La responsabilidad de este componente es retornar un li con los datos de la imagen
+ * La responsabilidad de este componente es retornar un li con los datos de la imagen.
+ * uso de memo para evitar que se vuelvan a renderizar los items de busquedas anteriores
  */
-export const GitItem = ({ id, image, title }) => {
+export const GitItem = React.memo(({ id, image, title }) => {
   return (
     <li key={id} className="category__item">
       <figure className="category__item__fig">
@@ -10,4 +13,4 @@ export const GitItem = ({ id, image, title }) => {
       </figure>
     </li>
   );
-};
+});

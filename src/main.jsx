@@ -4,7 +4,7 @@ import './index.css'
 import { GifApp } from './GifApp.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <GifApp />
-  </StrictMode>,
+  // </StrictMode>,
 )

@@ -50,6 +50,8 @@ header {
 form {
   position: relative;
   border-radius: 12px;
+  display: flex;
+  flex-flow: column nowrap;
 
   &::before {
     display: block;

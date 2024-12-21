@@ -1,14 +1,17 @@
 import { GitItem } from "./GitItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { Loader } from "./loader/Loader";
+import React from "react";
 
 /**
  * la responsabilidad de este componente es
  * mostrar en un grid section, respresenrando la categoria
- * y una lista con las imagenes
+ * y una lista con las imagenes.
+ * 
+ * uso de memo para evitar un nuevo renderizado cuandocambie el estado interno del hook useFetchGifs
  */
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = React.memo(({ category }) => {
   // us =o de custom hook
   const { images: gifs, isLoading } = useFetchGifs(category);
 
@@ -24,4 +27,4 @@ export const GifGrid = ({ category }) => {
       )}
     </>
   );
-};
+});
